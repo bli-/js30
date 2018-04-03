@@ -7,6 +7,23 @@
 </head>
 <body>
 <script>
+  const keys = [];
+  // const secretCode = [ "ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a" ];
+  // to compare against this array, I'd have to iterate against each item of this array
+  const secretCode = 'bossman'
+  window.addEventListener('keyup', (e) => {
+    // if (keys.length >= 10) {
+    //   keys.splice(0, 1);
+    // }
+    keys.push(e.key);
+    keys.splice(-secretCode.length - 1, keys.length - secretCode.length);
+    console.log(keys);
+
+    if (keys.join('') === secretCode) {
+      cornify_add();
+    }
+  })
+
 </script>
 </body>
 </html>
